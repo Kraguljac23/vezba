@@ -10,10 +10,22 @@ rerna::ukljuci(){
   
   if(trenutnoStanje == ISKLJUCENA){
   trenutnoStanje = UKLJUCENA;
-  temperatura = temperatura + ZAGREVANJE_KORAK;
+  temperatura = temperatura + KORAK_ZAGREVANJA;
   uspesno = true;
   }else{
   uspesno = false;
   }
   return uspesno;
   }
+rerna::iskljuci(){
+  bool uspesno;
+  
+  if(trenutnoStanje == ukljucena){
+    trenutnoStanje = ISKLJUCENA;
+    temperatura = MIN_TEMPERATURA;
+    uspesno = true;
+  }else{
+    uspesno = false;
+  }
+  return uspesno;
+}
