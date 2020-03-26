@@ -1,0 +1,113 @@
+#include "rerna.hpp"
+
+void ispisiRernu(const rerna &r){ 
+  cout << "Rerna ";
+  }
+  
+  cout << "STANJE: "
+  switch(r.getTrenutnoStanje()){
+  case UKLJUCENA:
+    cout << "ukljucena"
+    break;
+  case ISKLJUCENA:
+    cout << "iskljucena"
+    break;
+  case POKVARENA:
+    cout << "pokvarena"
+    break;
+  default:
+    cout << "nedefinisano"
+    break;
+    }
+    
+    cout << "temperatura: " << r.getTemperatura() endl;
+    }
+ 
+int meni(){
+
+int x;
+cout << "IZABERITE FUNKCIJU:" << endl;
+cout << "1. Ukljuci rernu" << endl;
+cout << "2. Iskljuci rernu" << endl;
+cout << "3. Popravi rernu" << endl;
+cout << "4. Pokvari rernu" << endl;
+cout << "5. Povecaj temperaturu" << endl;
+cout << "6. Smanji temperaturu" << endl;
+cout << "7. Trenutno stanje" << endl;
+cout << "8. Kraj rada programa" << endl;
+cout << "Izaberite operaciju: ";
+
+cin << x;
+return x;
+}
+
+int main(){
+
+int x;
+Rerna r;
+
+do{
+
+x = meni();
+
+cout endl;
+switch(x){
+  case 1: 
+      if(r.ukljuci()){
+      cout << "Operacija je uspesno izvrsena!" << endl;
+      }else{
+      cout << "Operacija nije izvrsena!" << endl;
+      }
+      break;
+   case 2: 
+      if(r.islkjuci()){
+      cout << "Operacija je uspesno izvrsena!" << endl;
+      }else{ 
+      cout << "Operacija nije izvrsena!" << endl;
+      }
+      break;
+   case 3:
+      if(r.pokvari()){
+      cout << "Operacija je uspeno izverena!" <<endl;
+      }else{
+      cout << "Operacija nije izvrsena!" << endl;
+      }
+      break;
+      }
+   case 4:
+      if(r.popravi()){
+      cout << "Operacija je uspesno izvrsena!" << endl;
+      }else{
+      cout << "Operacija nije izvrsena" << endl;
+      }
+      break;
+      }
+   case 5:
+      if(r.povecajTemperaturu()){
+      cout << "Operacija je uspesno izvrsena!" << endl;
+      }else{
+      cout << "operacija nije izvrsena!" << endl;
+      }
+      break;
+      }
+   case 6:
+      if(r.smanjiTemperaturu()){
+      cout << "Operacija je uspesno izvrsena!" << endl;
+      }else{
+      cout << "Operacija nije izvrsena!" << endl;
+      }
+      break;
+   case 7:
+      ispisiRernu(r);
+      break;
+   case 8: 
+      cout << "Kraj koriscenja rerne!" << endl;
+      break;
+   default:
+      cout << "Operacija ne postoji, probajte ponovo." << endl;
+      break;
+   }
+ }while(x != 8);
+
+return 0;
+}
